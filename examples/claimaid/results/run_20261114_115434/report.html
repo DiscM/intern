@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appeal Strength Report</title>
+<style>
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --text: #1a1d21; --muted: #5c6370;
+  --line: #dde1e7; --green: #2e7d32; --orange: #ef6c00; --gray: #616161;
+  --bar-bg: #e3e6ea; --note: #eef4fb; --warn: #fff3e0; --ok: #e6f4ea;
+  --bar-fill: #3949ab;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a; --card: #1e2127; --text: #e8eaed; --muted: #9aa0a6;
+    --line: #33383f; --green: #81c995; --orange: #f2b263; --gray: #9aa0a6;
+    --bar-bg: #2a2f36; --note: #1d2735; --warn: #33270f; --ok: #1c2e22;
+    --bar-fill: #8c9eff;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; background: var(--bg); color: var(--text);
+       font: 14px/1.45 -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+       sans-serif; }
+h1 { font-size: 20px; margin: 0 0 4px; }
+h2 { font-size: 15px; margin: 18px 0 8px; }
+.sub { color: var(--muted); margin: 0 0 12px; }
+.meta { color: var(--muted); font-size: 12px; margin-bottom: 12px; }
+.mock { font-weight: bold; color: var(--orange); margin: 8px 0; }
+.cards { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.card { background: var(--card); border: 1px solid var(--line);
+        border-radius: 8px; padding: 8px 12px; min-width: 90px; }
+.card .v { font-size: 18px; font-weight: 600; }
+.card .l { font-size: 11px; color: var(--muted); }
+.table-wrap { overflow-x: auto; background: var(--card);
+              border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid
+         var(--line); vertical-align: top; white-space: nowrap; }
+td.wrap, .det { white-space: normal; }
+td.name { white-space: normal; min-width: 160px; max-width: 260px; }
+td.name .d { font-size: 11px; color: var(--muted); }
+.pill { display: inline-block; border-radius: 999px; padding: 2px 10px;
+        font-size: 12px; font-weight: 600; color: #fff; }
+.pill-strong { background: var(--green); }
+.pill-uncertain { background: var(--orange); }
+.pill-weaker { background: var(--gray); }
+.bar { background: var(--bar-bg); border-radius: 4px; height: 8px;
+       width: 90px; margin-top: 4px; }
+.bar i { display: block; height: 8px; border-radius: 4px;
+         background: var(--bar-fill); }
+.step { font-size: 13px; }
+details { min-width: 220px; max-width: 420px; }
+summary { cursor: pointer; color: var(--muted); }
+.det { border-left: 3px solid var(--line); padding-left: 8px; margin: 6px 0; }
+.note { background: var(--note); border-radius: 6px; padding: 8px;
+        margin: 6px 0; }
+.warnbox { background: var(--warn); border-radius: 6px; padding: 8px;
+           margin: 6px 0; }
+.okbox { background: var(--ok); border-radius: 6px; padding: 8px; margin: 6px 0; }
+.err { color: var(--orange); font-weight: 600; }
+footer { margin-top: 16px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>Appeal Strength Report</h1>
+<p class="sub">How strong is each appeal, and who should look at it next.
+Decision support only: it never denies a case alone.</p>
+<p class="meta">2026-11-14 11:54 · model: drex-max-v1.1</p>
+<p class="mock">MOCK MODE: random answers</p>
+<div class="cards"><div class="card"><div class="v">1</div><div class="l">appeals</div></div><div class="card"><div class="v">0</div><div class="l">strong</div></div><div class="card"><div class="v">1</div><div class="l">uncertain</div></div><div class="card"><div class="v">0</div><div class="l">weaker</div></div><div class="card"><div class="v">0</div><div class="l">fast-track</div></div><div class="card"><div class="v">1</div><div class="l">human review</div></div><div class="card"><div class="v">0</div><div class="l">errors</div></div><div class="card"><div class="v">$0.0002</div><div class="l">estimated cost</div></div><div class="card"><div class="v">0 s</div><div class="l">time</div></div></div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>document</th><th>strength</th><th>P(overturn)</th>
+<th>next step</th><th>cost</th><th>details</th></tr></thead>
+<tbody>
+<tr><td class="name">ok.txt<div class="d">unknown · </div></td><td><span class="pill pill-uncertain">uncertain</span></td><td>50%<div class="bar"><i style="width:50%"></i></div></td><td class="step">👤 human review</td><td>$0.000226</td><td class="wrap"><details><summary>details</summary><div class="note">Uncertain: it could go either way. Appeal, and add records or a letter from your doctor.</div><div class="det">summary: Some appeal text about a denial.
+</div><div class="det">reasons: agents disagree on the vote; confidence 0.51 below 0.65; chair requested human review</div><div class="det">votes: clinical_reviewer: overturn; evidence_reviewer: uphold; plan_policy_analyst: overturn; patient_advocate: uphold; actuary: uphold</div><div class="det">calls 11 · tokens 7541 · image tokens 0 · images 0 · 0.48 s</div><div class="det">cited fields: —</div></details></td></tr>
+</tbody>
+</table>
+</div>
+<footer>Decision support only. It never denies a case alone: every case
+that leans "uphold" goes to a human reviewer. A weaker appeal can still
+win, especially with new medical records or a letter from the doctor.</footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+name,status,strength,p_overturn,next_step,patient_note,decision,needs_human,treatment,diagnosis,review_type,case_id,truth,correct,reasons,votes,summary,cited_fields,images_sent,drex_calls,input_tokens,image_tokens,cost_usd,seconds,error,file
+MN16-24179.txt,ok,strong,0.693,human review,Strong appeal: similar cases were often overturned. Appealing is worth it.,overturn,True,unknown,,,,overturned,True,agents disagree on the vote,clinical_reviewer: overturn; evidence_reviewer: overturn; plan_policy_analyst: uphold; patient_advocate: uphold; actuary: uphold,"HEALTH PLAN DETERMINATION LETTER
+Reference ID: MN16-24179
+Report year: 2016
+Review type: Medical Necessity
+Turnaround: E",,2,11,11003,3200,0.00033009,0.5,,packets/MN16-24179.txt
